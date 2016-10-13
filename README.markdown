@@ -13,7 +13,7 @@
 
 (visa32:vi-open *session* *gpib-address* 0 0 *vi-session*)
 
-(visa32::vi-write *vi-session* "*RST" (length "*RST") *return-count*)
+(visa32:vi-write *vi-session* "*RST" (length "*RST") *return-count*)
 ```
 
 ## Installation
