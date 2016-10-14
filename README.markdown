@@ -18,6 +18,8 @@
 
 ## Installation
 
+Get visa32.dll in the beginning.
+
 ```bash
 cd $HOME/quicklisp/local-projects
 git clone https://github.com/a-nano/cl-visa32.git
@@ -29,7 +31,6 @@ Start your lisp. Then, just:
 ```common-lisp
 (ql:quickload :cl-visa32)
 ```
-Put the visa32.dll to "/cl-visa32/lib/".
 
 ## Author
 

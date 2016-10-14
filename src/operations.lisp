@@ -3,13 +3,7 @@
 |#
 
 (defpackage cl-visa32.operations
-  (:use :cl)
-  (:import-from :cffi
-                :define-foreign-library
-                :defcstruct
-                :defcenum
-                :defcfun
-                :use-foreign-library)
+  (:use :cl :cffi)
   (:export :vi-assert-intr-signal
            :vi-assert-trigger
            :vi-assert-util-signal
@@ -92,12 +86,15 @@
 
 ;; library
 
-(setf *foreign-library-directories* (list #p"/lib/"))
+;; Set your visa32.dll library
+; (pushnew #P"/lib/" *foreign-library-directories*)
 
 (define-foreign-library visa32
     (:windows (:default "visa32")))
 
 (use-foreign-library visa32)
+
+;; operations
 
 (defcfun ("viAssertIntrSignal" vi-assert-intr-signal)
   :long
